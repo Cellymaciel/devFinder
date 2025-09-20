@@ -8,6 +8,10 @@
   <p>Não conseguimos encontrar o usuário informado.</p>
 </div>
 
+<p-button routerLink="/" class="goBack">
+  <p>Voltar</p>
+</p-button>
+
 <div class="container"  *ngIf="user">
 <div id="inline" *ngIf="user">
   <div id="perfil">
@@ -66,7 +70,7 @@
        <i class="pi pi-star" ></i>
         <p>{{ repo.stargazers_count }}</p>
         <p>-</p>
-        <p>Atualizado em {{ repo.updated_at | date: 'longDate' }}.</p>
+        <p class="data-atualizacao">Atualizado em {{ repo.updated_at | date: 'longDate' }}.</p>
       </div>
       <div class="line"></div>
     </div>

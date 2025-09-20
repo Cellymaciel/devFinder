@@ -3,10 +3,12 @@
   flex-direction: row;
   justify-content: space-between;
   padding: 2rem 3rem;
+  align-items: center;
 }
 .boxTitle{
   display: flex;
   flex-direction: row;
+  gap: 10px;
 }
 #dev{
   font-family: 'Inter', sans-serif;
@@ -20,3 +22,16 @@
   color: #FA7A05;
   font-size: 2.3rem;
 }
+@media screen  and (max-width: 500px) {
+  .container {
+    padding: 1rem 2rem;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .container app-input-search {
+    flex-grow: 1;
+    max-width: 100%;
+  }
+}
+

@@ -11,7 +11,7 @@ registerLocaleData(localePt)
 
 @Component({
   selector: 'app-perfil',
-  imports: [Header, ButtonModule, CommonModule, ProgressSpinnerModule],
+  imports: [Header, ButtonModule, CommonModule, ProgressSpinnerModule, RouterLink],
   providers:[
     {provide: LOCALE_ID, useValue: 'pt-BR'}
   ],

@@ -23,3 +23,12 @@
   color: #FA7A05;
   font-size: 3.5rem;
 }
+
+@media screen  and (max-width: 500px) {
+  #dev{
+    font-size: 2.5rem;
+  }
+  #finder{
+    font-size: 2.5rem;
+  }
+}
