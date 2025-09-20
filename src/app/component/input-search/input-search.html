@@ -1,7 +1,7 @@
 <div id="container">
   <p-iconfield>
       <span class="pi pi-search"></span>
-      <input type="text" pInputText placeholder="Pesquisar..." />
+      <input type="text" pInputText placeholder="Pesquisar..." [(ngModel)]="userName"  ((keypress))="onSearch()"/>
   </p-iconfield>
-  <p-button label="Buscar" routerLink="/perfil"></p-button>
+  <p-button label="Buscar" (click)="onSearch()"></p-button>
 </div>

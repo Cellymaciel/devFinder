@@ -17,11 +17,15 @@
  #boxImg{
   border-radius:100% ;
   border: 2px solid black;
-  padding: 5px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
  }
 
- #boxImg .pi{
-  font-size: 30px;
+ #boxImg img{
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
  }
 
  #nome{
@@ -63,16 +67,22 @@
   flex-direction: column;
   gap: 15px;
 }
-#inline p-button{
+.btn{
+  text-decoration: none;
+}
+.btn p-button{
   background-color: blue;
   padding: 10px 15px;
   border-radius:5px;
+  display: flex;
   font-family: 'Inter', sans-serif;
   text-align: center;
+  align-items: center;
+  justify-content: center;
 
 
 }
-#inline p-button p{
+.btn p-button p{
   font-size: 20px;
   color: white;
   font-weight: bold;
@@ -80,17 +90,19 @@
 
 #repo{
    background-color: #F2F0F0;
-   width: auto;
+   width: 100%;
    height: auto;
    padding: 0px 25px 25px;
 }
 .repositorio{
   margin-top: 25px;
 }
-.nameRepo{
+.nameRepo a{
   font-family: 'Inter', sans-serif;
   font-size: 25px;
   font-weight: bold;
+  text-decoration: none;
+  color: black;
 }
 .descripitionRepo{
   font-family: 'Inter', sans-serif;

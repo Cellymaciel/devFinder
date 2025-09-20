@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component} from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { InputTextModule } from 'primeng/inputtext';
@@ -14,7 +14,6 @@ import { InputIconModule } from 'primeng/inputicon';
             CommonModule,
             FormsModule,
             ButtonModule,
-            RouterLink,
             IconFieldModule,
             InputIconModule],
   templateUrl: './input-search.html',
@@ -22,8 +21,14 @@ import { InputIconModule } from 'primeng/inputicon';
 })
 export class InputSearch {
 
+userName : string = '';
+@Output() search = new EventEmitter<string>();
 
-
+onSearch(){
+  if(this.userName){
+    this.search.emit(this.userName)
+  }
+}
 
 
 

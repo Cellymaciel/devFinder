@@ -1,69 +1,74 @@
 <app-header></app-header>
 
-<div class="container">
+<div *ngIf="isLoading" class="loading-message">Carregando dados...</div>
+<div *ngIf="!user && !isLoading" class="error-message">Usuário não encontrado.</div>
 
-<div id="inline">
+<div class="container">
+<div id="inline" *ngIf="user">
   <div id="perfil">
     <div id="titleUser">
       <div id="boxImg">
-        <i class="pi pi-user" ></i>
-      </div>
-        <div id="boxUser">
-          <p id="nome">Nome do usuário </p>
-          <p id="user">@nome_usuario</p>
+          <img [src]="user.avatar_url" alt="Avatar do usuário">
+           </div>
+      <div id="boxUser">
+          <p id="nome">{{user.name}}</p>
+          <p id="user">@{{user.login}}</p>
         </div>
     </div>
-    <p id="description">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus libero tortor, imperdiet at est ut, pretium laoreet nibh. Integer imperdiet odio nec consequat pellentesque.
-    </p>
+    <p id="description">   {{ user.bio || 'Sem descrição.' }} </p>
     <div class="boxContent" style="margin-top: 25px;">
       <i class="pi pi-heart" ></i>
-      <p>220</p>
+      <p>{{ user.following }} </p>
       <p>seguindo</p>
     </div>
     <div class="boxContent" style="margin-top: 8px;">
       <i class="pi pi-users" ></i>
-      <p>580</p>
-      <p>seguindore</p>
+      <p>{{ user.followers }}</p>
+      <p>seguindores</p>
     </div>
     <div class="boxContent" style="margin-top: 25px;">
       <i class="pi pi-map-marker" ></i>
-      <p>Curitiba/PR</p>
-    </div>
-     <div class="boxContent" style="margin-top: 5px;">
-      <i class="pi pi-envelope" ></i>
-      <p>email@gmail.com.br</p>
-    </div>
-  </div>
-  <p-button>
-    <p>Contato</p>
-  </p-button>
+      <p>{{ user.location}}
+      </div>
+      <div class="boxContent" style="margin-top: 5px;">
+       <i class="pi pi-envelope" ></i>
+       <p>{{ user.email || 'Não Declarado' }}</p>
+     </div>
+
+
+</div>
+  <a *ngIf="user.blog" [href]="user.blog" target="_blank" class="btn" >
+    <p-button styleClass="p-button-secondary">
+      <p>Contato</p>
+    </p-button>
+  </a>
+  <a *ngIf="user.twitter_username" [href]="'https://twitter.com/' + user.twitter_username" target="_blank" rel="noopener noreferrer">
+    <p-button styleClass="p-button-secondary">
+      <p>Twitter</p>
+    </p-button>
+  </a>
 </div>
 
   <div id="repo">
-    <div class="repositorio">
-      <h2 class="nameRepo">Nome do repositório</h2>
-      <p class="descripitionRepo">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam aliquam accumsan gravida. Praesent gravida mi nec ex tristique pulvinar. Phasellus tincidunt risus nec turpis varius imperdiet sed vitae sem. Curabitur quis nulla non turpis tincidunt iaculis. Aenean pellentesque neque condimentum vehicula porta. Cras tempus augue aliquam, ullamcorper diam quis, eleifend leo. Donec urna tellus, consectetur at leo sit amet, volutpat gravida augue. Pellentesque sed massa faucibus, dapibus elit nec, egestas neque. Phasellus vitae odio eget ante finibus rhoncus. Vivamus eu dolor nec tellus tempus placerat ut eget est. Curabitur pellentesque molestie metus, vel fermentum massa ornare vel.</p>
+    <div class="repositorio" *ngFor="let repo of repos">
+      <h2 class="nameRepo">
+          <a [href]="repo.html_url" target="_blank" rel="noopener noreferrer">
+            {{ repo.name }}
+          </a>
+        </h2>
+      <p class="descripitionRepo">{{ repo.description || 'Sem descrição.' }}</p>
       <div class="update">
-       <i class="pi pi-heart" ></i>
-        <p>100</p>
+       <i class="pi pi-star" ></i>
+        <p>{{ repo.stargazers_count }}</p>
         <p>-</p>
-        <p>Atualizado a 2 Semanas</p>
+        <p>Atualizado em {{ repo.updated_at | date }}</p>
       </div>
+      <div class="line"></div>
     </div>
-    <div class="line"></div>
 
-    <div class="repositorio">
-      <h2 class="nameRepo">Nome do repositório</h2>
-      <p class="descripitionRepo">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam aliquam accumsan gravida. Praesent gravida mi nec ex tristique pulvinar. Phasellus tincidunt risus nec turpis varius imperdiet sed vitae sem. Curabitur quis nulla non turpis tincidunt iaculis. Aenean pellentesque neque condimentum vehicula porta. Cras tempus augue aliquam, ullamcorper diam quis, eleifend leo. Donec urna tellus, consectetur at leo sit amet, volutpat gravida augue. Pellentesque sed massa faucibus, dapibus elit nec, egestas neque. Phasellus vitae odio eget ante finibus rhoncus. Vivamus eu dolor nec tellus tempus placerat ut eget est. Curabitur pellentesque molestie metus, vel fermentum massa ornare vel.</p>
-      <div class="update">
-       <i class="pi pi-heart" ></i>
-        <p>100</p>
-        <p>-</p>
-        <p>Atualizado a 2 Semanas</p>
-      </div>
-    </div>
-    <div class="line"></div>
+
   </div>
 
+
 </div>
+
