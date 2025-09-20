@@ -1,9 +1,14 @@
 <app-header></app-header>
 
-<div *ngIf="isLoading" class="loading-message">Carregando dados...</div>
-<div *ngIf="!user && !isLoading" class="error-message">Usuário não encontrado.</div>
+<div *ngIf="isLoading" class="loading-message">
+  <p-progressSpinner styleClass="custom-spinner"></p-progressSpinner>
+  <p>Carregando dados...</p>
+</div>
+<div *ngIf="!user && !isLoading" class="error-message">
+  <p>Não conseguimos encontrar o usuário informado.</p>
+</div>
 
-<div class="container">
+<div class="container"  *ngIf="user">
 <div id="inline" *ngIf="user">
   <div id="perfil">
     <div id="titleUser">
@@ -61,7 +66,7 @@
        <i class="pi pi-star" ></i>
         <p>{{ repo.stargazers_count }}</p>
         <p>-</p>
-        <p>Atualizado em {{ repo.updated_at | date }}</p>
+        <p>Atualizado em {{ repo.updated_at | date: 'longDate' }}.</p>
       </div>
       <div class="line"></div>
     </div>

@@ -5,7 +5,12 @@ import { Perfil } from './component/perfil/perfil';
 export const routes: Routes = [
   {
     path:'',
-    component:Home
+    component:Home,
+    pathMatch:'full'
+  },
+  {
+    path:'home',
+    component: Home
   },
   {
     path:'perfil/:username',

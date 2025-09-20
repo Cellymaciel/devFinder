@@ -1,8 +1,38 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
 .container{
   display: flex;
   flex-direction: row;
   gap: 20px;
   padding: 10px 45px;
+  height: 100vh;
+  overflow: hidden;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.custom-spinner {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 15px;
+}
+.loading-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  padding: 20px;
+}
+.error-message{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 150px;
 }
 #perfil{
   background-color: #F2F0F0;
@@ -93,6 +123,8 @@
    width: 100%;
    height: auto;
    padding: 0px 25px 25px;
+   overflow-y: auto;
+   flex: 1;
 }
 .repositorio{
   margin-top: 25px;
