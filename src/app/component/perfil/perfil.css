@@ -1,0 +1,117 @@
+.container{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding: 10px 45px;
+}
+#perfil{
+  background-color: #F2F0F0;
+  width: 350px;;
+  padding: 25px 30px 50px 30px;
+}
+ #titleUser{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+ }
+ #boxImg{
+  border-radius:100% ;
+  border: 2px solid black;
+  padding: 5px;
+ }
+
+ #boxImg .pi{
+  font-size: 30px;
+ }
+
+ #nome{
+  font-family: 'Inter', sans-serif;
+  font-weight:bold;
+  font-size: 15px;
+ }
+ #user{
+  font-family: 'Inter', sans-serif;
+  font-weight:400;
+  font-size: 15px;
+ }
+
+ #boxUser{
+  display: flex;
+  flex-direction:column;
+  gap: 2px
+ }
+
+ #description{
+  margin-top: 25px;
+  font-family: 'Inter', sans-serif;
+ }
+.boxContent{
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+}
+.boxContent .pi{
+  font-size: 18px;
+  margin-right: 5px;
+
+}
+#inline{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+#inline p-button{
+  background-color: blue;
+  padding: 10px 15px;
+  border-radius:5px;
+  font-family: 'Inter', sans-serif;
+  text-align: center;
+
+
+}
+#inline p-button p{
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+}
+
+#repo{
+   background-color: #F2F0F0;
+   width: auto;
+   height: auto;
+   padding: 0px 25px 25px;
+}
+.repositorio{
+  margin-top: 25px;
+}
+.nameRepo{
+  font-family: 'Inter', sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+}
+.descripitionRepo{
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  margin-top: 15px;
+}
+
+.update{
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  margin-top: 15px;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
+
+.line{
+  width: 100%;
+  height: 1px;
+  background-color: black;
+  margin-top: 35px;
+}
